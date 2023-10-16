@@ -16,4 +16,5 @@ function getDataFromForm() {
       p.textContent = xhr.responseText;
     }
   }
+  xhr.send();
 }
