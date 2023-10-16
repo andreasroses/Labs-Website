@@ -11,7 +11,7 @@ function getDataFromForm() {
   console.log("Last Name:", lname);
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "ajax.php", true);
-  xhr.onload() = function(){
+  xhr.onload = function(){
     if(xhr.status === 200){
       p.textContent = xhr.responseText;
     }
