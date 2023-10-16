@@ -1,5 +1,5 @@
 const button = document.getElementById("submit");
-const p = getElementById("responseString");
+const p = document.getElementById("responseString");
 button.addEventListener("click", function () {
   getDataFromForm();
 });
