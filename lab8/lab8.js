@@ -1,5 +1,8 @@
+const button = document.getElementById("submit");
 const p = document.getElementById("responseString");
-document.getElementById("submit").addEventListener("click", getDataFromForm);
+if (button) {
+  button.addEventListener("click", getDataFromForm);
+}
 
 function getDataFromForm() {
   const fname = document.getElementById("fname").value;
@@ -8,8 +11,8 @@ function getDataFromForm() {
   console.log("Last Name:", lname);
   var xhr = new XMLHttpRequest();
   xhr.open("GET", "./ajax.php", true);
-  xhr.onload = function(){
-    if(xhr.status === 200){
+  xhr.onload = function () {
+    if (xhr.status === 200) {
       p.textContent = xhr.responseText;
     }
   }
