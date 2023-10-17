@@ -11,14 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
 function getDataFromForm() {
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
+  var params = "fname=" + encodeURIComponent(fname) + "&lname=" + encodeURIComponent(lname);
   console.log("First Name:", fname);
   console.log("Last Name:", lname);
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "./ajax.php", true);
+  xhr.open("POST", "ajax.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = function () {
     if (xhr.status === 200) {
       p.textContent = xhr.responseText;
     }
   }
-  xhr.send();
+  xhr.send(params);
 }
