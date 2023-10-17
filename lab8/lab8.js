@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.getElementById("submit");
-  const p = document.getElementById("responseString");
-
   button.addEventListener("click", function () {
       getDataFromForm();
   }
@@ -9,19 +7,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function getDataFromForm() {
+  const p = document.getElementById("responseString");
   const fname = document.getElementById("fname").value;
   const lname = document.getElementById("lname").value;
-  var params = "fname=" + encodeURIComponent(fname) + "&lname=" + encodeURIComponent(lname);
-  console.log("First Name:", fname);
-  console.log("Last Name:", lname);
-  var url = "ajax.php";
+  const queryString = `?fname=${encodeURIComponent(fname)}&lname=${encodeURIComponent(lname)}`;
+  var url = "ajax.php" + queryString;
   var xhr = new XMLHttpRequest();
-  xhr.open("POST", url, true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.open("GET", url, true);
   xhr.onload = function () {
     if (xhr.status === 200) {
       p.textContent = xhr.responseText;
     }
   }
-  xhr.send(params);
+  xhr.send();
 }
