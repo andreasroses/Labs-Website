@@ -10,7 +10,7 @@ function getDataFromForm() {
   console.log("First Name:", fname);
   console.log("Last Name:", lname);
   var xhr = new XMLHttpRequest();
-  xhr.open("GET", "ajax.php", true);
+  xhr.open("GET", "./ajax.php", true);
   xhr.onload = function(){
     if(xhr.status === 200){
       p.textContent = xhr.responseText;
