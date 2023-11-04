@@ -1,5 +1,5 @@
 <?php
-if (&_SERVER["REQUEST_METHOD"] === "POST"){
+if ($_SERVER["REQUEST_METHOD"] === "POST"){
     $fname = $_POST["fname"];
     $lname = $_POST["lname"];
     $file = "D:/home/site/priv/userInfo.txt";
@@ -7,7 +7,3 @@ if (&_SERVER["REQUEST_METHOD"] === "POST"){
     file_put_contents($file, $data, FILE_APPEND);
     include('show_data.php');
 }
-
-
-
-
