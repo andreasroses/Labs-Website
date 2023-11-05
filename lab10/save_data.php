@@ -7,3 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     file_put_contents($file, $data, FILE_APPEND);
     include('show_data.php');
 }
+else{
+    echo "save_data.php failed";
+}
