@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("userForm");
     form.addEventListener("submit", function () {
         event.preventDefault();
-        getDataFromForm();
+        getDataFromForm(form);
     }
     )});
 
 
-function getDataFromForm() {
+function getDataFromForm(form) {
     
     const formData = new FormData(form);
     runAjax(formData);
