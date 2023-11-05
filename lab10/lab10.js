@@ -8,12 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function getDataFromForm(form) {
-    
-    const formData = new FormData(form);
-    runAjax(formData);
+    runAjax(form);
     }
 
 function runAjax(form){
+    const formData = new FormData(form);
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "save_data.php", true);
     xhr.send(formData);
