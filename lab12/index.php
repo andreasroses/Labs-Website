@@ -13,14 +13,15 @@
 <h1 class = "align-center">Cookies</h1>
 <br />
 <?php
+    session_start();
 
-session_start();
-
-$sessionID = uniqid();;
-
-setcookie("CS4413", $sessionID, time() + 3600, "/");
-
-echo "<p>CS4413 holds session ID: $sessionID</p>";
+if (isset($_COOKIE["CS4413"])) {
+    echo "<p>CS4413 cookie is already set. Session ID: {$_COOKIE["CS4413"]}</p>";
+} else {
+    $sessionID = uniqid();
+    setcookie("CS4413", $sessionID, time() + 3600, "/");
+    echo "<p>CS4413 cookie is set. Session ID: $sessionID</p>";
+}
 ?>
 
 </body>
