@@ -18,10 +18,8 @@ session_start();
 
 $sessionID = session_id();
 
-// Set the session ID in a cookie
 setcookie("CS4413", $sessionID, time() + 3600, "/");
 
-// Display the session ID
 echo "<p>CS4413 holds session ID: $sessionID</p>";
 ?>
 
