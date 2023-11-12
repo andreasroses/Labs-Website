@@ -16,7 +16,7 @@
 
 session_start();
 
-$sessionID = session_id();
+$sessionID = uniqid();;
 
 setcookie("CS4413", $sessionID, time() + 3600, "/");
 
