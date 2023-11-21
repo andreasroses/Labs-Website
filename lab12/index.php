@@ -18,7 +18,7 @@
     <?php
     session_start();
 
-    if (isset($_COOKIE["CS4413"])) {
+    if (isset($_COOKIE["CS4413"])&& $_COOKIE["CS4413"] > time()) {
         echo "<p>CS4413 cookie is already set. Session ID: {$_COOKIE["CS4413"]}, Expiration: " . date("Y-m-d H:i:s", $_COOKIE["CS4413"]) . "</p>";
     } else {
         $sessionID = uniqid();
