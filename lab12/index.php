@@ -23,7 +23,7 @@
     } else {
         $sessionID = uniqid();
         setcookie("CS4413", $sessionID, time() + 36000, "/");
-        echo "<p>CS4413 cookie is set. Session ID: $sessionID, Expiration: " . date("Y-m-d H:i:s", time() + 3600) . "</p>";
+        echo "<p>CS4413 cookie is set. Session ID: $sessionID, Expiration: " . date("Y-m-d H:i:s", time() + 36000) . "</p>";
     }
 ?>
 
