@@ -8,7 +8,7 @@
         $sessionID = uniqid();
         $expirationTime = time() + 36000;  // 10 hours
         setcookie("CS4413", $sessionID, $expirationTime, "/","ara-webtech.azurewebsites.net");
-        $cookieVal = $_COOKIE["CS4413"];
+        $cookieVal = $sessionID;
         $cookieSet = 0;
     }
 ?>
