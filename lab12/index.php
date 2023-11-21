@@ -16,7 +16,6 @@
     <h1 class="align-center">Cookies</h1>
     <br />
     <?php
-    session_start();
 
     if (isset($_COOKIE["CS4413"]) && $_COOKIE["CS4413"] > time()) {
         // The cookie is already set and has not expired
