@@ -18,12 +18,18 @@
     <?php
     session_start();
 
-    if (isset($_COOKIE["CS4413"])&& $_COOKIE["CS4413"] > time()) {
+    if (isset($_COOKIE["CS4413"]) && $_COOKIE["CS4413"] > time()) {
+        // The cookie is already set and has not expired
         echo "<p>CS4413 cookie is already set. Session ID: {$_COOKIE["CS4413"]}, Expiration: " . date("Y-m-d H:i:s", $_COOKIE["CS4413"]) . "</p>";
     } else {
+        // Set a new cookie
         $sessionID = uniqid();
-        setcookie("CS4413", $sessionID, time() + 36000, "/");
-        echo "<p>CS4413 cookie is set. Session ID: $sessionID, Expiration: " . date("Y-m-d H:i:s", time() + 36000) . "</p>";
+        $expirationTime = time() + 36000;  // 10 hours
+        setcookie("CS4413", $sessionID, $expirationTime, "/");
+        echo "<p>CS4413 cookie is set. Session ID: $sessionID, Expiration: " . date("Y-m-d H:i:s", $expirationTime) . "</p>";
+    
+        // Debugging: Output all cookies
+        echo "<p>All Cookies: " . json_encode($_COOKIE) . "</p>";
     }
 ?>
 
